@@ -1,0 +1,70 @@
+GET http://localhost:8080/api/usuarios HTTP/1.1
+###
+GET http://localhost:8080/api/usuarios/1 HTTP/1.1
+###
+DELETE http://localhost:8080/api/usuarios/1 HTTP/1.1
+###
+POST http://localhost:8080/api/usuarios HTTP/1.1
+content-type: application/json
+
+{
+  "nome": "John Doe",
+  "email": "johndoe@gmail.com",
+  "telefone": "55449998765432"
+}
+###
+PUT http://localhost:8080/api/usuarios/1 HTTP/1.1
+content-type: application/json
+
+{
+  "nome": "John Doe Bond",
+  "email": "johndoe@gmail.com",
+  "telefone": "55449998765432"
+}
+###
+GET http://localhost:8080/api/livros HTTP/1.1
+###
+GET http://localhost:8080/api/livros/1 HTTP/1.1
+###
+DELETE http://localhost:8080/api/livros/1 HTTP/1.1
+###
+POST http://localhost:8080/api/livros HTTP/1.1
+content-type: application/json
+
+{
+  "data_publicacao": "2025-10-29T17:49:24.26",
+  "categoria": "ficção",
+  "autor": "Frank Herbert",
+  "titulo": "Profeta de Duna",
+  "isbn": "978-85-333-0227-3"
+}
+###
+PUT http://localhost:8080/api/livros/1 HTTP/1.1
+content-type: application/json
+
+{
+  "data_publicacao": "2025-10-29T17:49:24.26",
+  "categoria": "ficção",
+  "autor": "Frank Herbert",
+  "titulo": "Filhos de Duna",
+  "isbn": "978-85-333-0227-4"
+}
+###
+GET http://localhost:8080/api/emprestimos HTTP/1.1
+###
+POST http://localhost:8080/api/emprestimos HTTP/1.1
+content-type: application/json
+
+{
+  "usuario_id": "1",
+  "livro_id": "1"
+}
+###
+PATCH http://localhost:8080/api/emprestimos/1/devolucao HTTP/1.1
+###
+GET http://localhost:8080/api/recomendacoes/usuarios/1 HTTP/1.1
+
+###
+GET http://localhost:8080/api/livros/google-search?titulo= HTTP/1.1
+###
+GET https://www.googleapis.com/books/v1/volumes?q=Dune&maxResults=1 HTTP/1.1
